@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:colorPrimaryDark"
+    android:layout_marginBottom="50dp"
+    tools:context=".ui.notifications.NotificationsFragment">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Legs"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/teal"
+            android:textStyle="bold"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:shadowRadius="@integer/config_navAnimTime"
+            android:textSize="20dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:colorPrimaryDark">
+
+            <include
+                layout="@layout/home_legs_workout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"/>
+
+
+        </HorizontalScrollView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Arms"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/teal"
+            android:textStyle="bold"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:shadowRadius="@integer/config_navAnimTime"
+            android:textSize="20dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:colorPrimaryDark">
+
+            <include
+                layout="@layout/home_arms_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"/>
+
+
+        </HorizontalScrollView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Chest"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/teal"
+            android:textStyle="bold"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:shadowRadius="@integer/config_navAnimTime"
+            android:textSize="20dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:colorPrimaryDark">
+
+            <include
+                layout="@layout/home_chest_work_out"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"/>
+
+
+        </HorizontalScrollView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Abs"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:background="@color/teal"
+            android:textStyle="bold"
+            android:layout_marginLeft="4dp"
+            android:layout_marginRight="4dp"
+            android:shadowRadius="@integer/config_navAnimTime"
+            android:textSize="20dp"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:colorPrimaryDark" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:colorPrimaryDark">
+
+            <include
+                layout="@layout/home_abs_workout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"/>
+
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+
+</ScrollView>

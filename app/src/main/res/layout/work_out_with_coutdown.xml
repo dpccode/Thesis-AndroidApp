@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:colorPrimaryDark"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+
+
+
+        <TextView
+            android:id="@+id/exercise_title_work_out_with_coutdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jumping jacks"
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="?android:colorPrimaryDark"
+            android:textColor="?android:colorAccent"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/exercise_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_gravity="center"
+            android:textSize="30dp"
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:textColor="?android:colorAccent"
+            android:visibility="gone"
+            android:textStyle="bold"/>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <ProgressBar
+                android:id="@+id/progressBar2"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:indeterminateOnly="false"
+                android:background="?android:colorPrimaryDark"
+                android:progress="100"
+                android:progressDrawable="@drawable/circle" />
+
+            <TextView
+                android:id="@+id/coutDown"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00:30"
+                android:layout_gravity="center"
+                android:textSize="25dp"
+                android:gravity="center"
+                android:textColor="?android:colorAccent"
+                android:textStyle="bold"/>
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/Pause"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal"/>
+
+
+
+
+    </LinearLayout>
+
+
+
+    <Button
+        android:id="@+id/skipbtn_work_out_with_coutdown"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="10dp"
+        android:text="SKIP"
+        android:textColor="@color/white"
+        />
+
+
+
+</GridLayout>

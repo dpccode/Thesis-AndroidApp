@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?android:colorPrimaryDark"
+        android:weightSum="10"
+        android:padding="4dp">
+
+
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            >
+
+
+
+            <TextView
+                android:id="@+id/history_workout_title"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="25dp"
+                android:textStyle="bold"
+                android:textColor="?android:colorAccent"
+                android:text="Title" />
+
+
+            <TextView
+                android:id="@+id/history_workout_date"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:text="Date"
+                android:textColor="?android:colorAccent"/>
+
+
+        </LinearLayout>
+
+
+
+        <ImageButton
+            android:id="@+id/delete_item_from_history"
+            android:layout_width="fill_parent"
+            android:layout_weight="9"
+            android:layout_height="40dp"
+            android:layout_gravity="right|center"
+            android:text="Button"
+
+            android:background="@drawable/bin1"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/teal" />
+
+</LinearLayout>

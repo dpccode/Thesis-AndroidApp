@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">MyGym21</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="todo">TODO</string>
+
+    <string-array name="days">
+        <item>Monday</item>
+        <item>Tuesday</item>
+        <item>Wednesday</item>
+        <item>Thursday</item>
+        <item>Friday</item>
+        <item>Saturday</item>
+        <item>Sunday</item>
+    </string-array>
+
+    <string-array name="workouts">
+        <item>Full body</item>
+        <item>Chest</item>
+        <item>Legs</item>
+        <item>Arms</item>
+        <item>Shoulders</item>
+        <item>Back</item>
+        <item>Abs</item>
+    </string-array>
+</resources>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:colorPrimaryDark">
+
+
+
+    <ImageView
+        android:id="@+id/restImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/male_rest2"
+
+/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="REST"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        android:gravity="center"
+        android:background="?android:colorPrimaryDark"
+        android:textColor="@color/teal"
+        android:layout_gravity="center"/>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
+            android:indeterminateOnly="false"
+            android:progress="100"
+            android:progressDrawable="@drawable/circle" />
+
+        <TextView
+            android:id="@+id/coutDown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:30"
+            android:layout_gravity="center"
+            android:textSize="25dp"
+            android:gravity="center"
+            android:textColor="?android:colorAccent"
+            android:textStyle="bold"/>
+
+
+
+    </FrameLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="?android:colorPrimaryDark"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/Pause_rest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pause"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal"/>
+
+        <Button
+            android:id="@+id/Skip_rest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:gravity="center"
+        android:background="@color/teal">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="NEXT: "
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/next_exercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="textView"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+</GridLayout>

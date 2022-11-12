@@ -1,0 +1,567 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?android:colorPrimaryDark"
+    android:layout_marginBottom="50dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="Monday"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="@color/teal"/>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/teal" />
+
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/mondays_personal_workout"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginVertical="4dp"
+        android:layout_marginHorizontal="10dp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints">
+
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:id="@+id/mondays_personal_workout_image"
+            android:src="@drawable/legs1"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY" />
+
+        <Button
+            android:id="@+id/mondays_personal_workout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+        <TextView
+            android:id="@+id/mondays_personal_workout_title"
+            android:layout_gravity="left|top"
+            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ποδια για αρχαριους"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/mondays_personal_workout_totworkouts"
+            android:layout_gravity="left|bottom"
+            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11 workouts"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+    </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Tuesday"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/tuesdays_personal_workout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/tuesdays_personal_workout_image"
+                android:src="@drawable/legs1"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <Button
+                android:id="@+id/tuesdays_personal_workout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+            <TextView
+                android:id="@+id/tuesdays_personal_workout_title"
+                android:layout_gravity="left|top"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ποδια για αρχαριους"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/tuesdays_personal_workout_totworkouts"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11 workouts"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Wednesday"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/wednesdays_personal_workout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/wednesdays_personal_workout_image"
+                android:src="@drawable/legs1"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <Button
+                android:id="@+id/wednesdays_personal_workout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+            <TextView
+                android:id="@+id/wednesdays_personal_workout_title"
+                android:layout_gravity="left|top"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ποδια για αρχαριους"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/wednesdays_personal_workout_totworkouts"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11 workouts"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Thursday"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/thursdays_personal_workout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/thursdays_personal_workout_image"
+                android:src="@drawable/legs1"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <Button
+                android:id="@+id/thursdays_personal_workout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+            <TextView
+                android:id="@+id/thursdays_personal_workout_title"
+                android:layout_gravity="left|top"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ποδια για αρχαριους"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/thursdays_personal_workout_totworkouts"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11 workouts"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Friday"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/fridays_personal_workout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/fridays_personal_workout_image"
+                android:src="@drawable/legs1"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <Button
+                android:id="@+id/fridays_personal_workout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+            <TextView
+                android:id="@+id/fridays_personal_workout_title"
+                android:layout_gravity="left|top"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ποδια για αρχαριους"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/fridays_personal_workout_totworkouts"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11 workouts"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Saturday"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/saturdays_personal_workout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/saturdays_personal_workout_image"
+                android:src="@drawable/legs1"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <Button
+                android:id="@+id/saturdays_personal_workout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+            <TextView
+                android:id="@+id/saturdays_personal_workout_title"
+                android:layout_gravity="left|top"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ποδια για αρχαριους"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/saturdays_personal_workout_totworkouts"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11 workouts"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Sunday"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:textColor="@color/teal"/>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/teal" />
+
+
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/sundays_personal_workout"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/white"
+            android:layout_marginVertical="4dp"
+            android:layout_marginHorizontal="10dp"
+            android:visibility="gone"
+            tools:ignore="MissingConstraints">
+
+
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:id="@+id/sundays_personal_workout_image"
+                android:src="@drawable/legs1"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY" />
+
+            <Button
+                android:id="@+id/sundays_personal_workout_btn"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+            <TextView
+                android:id="@+id/sundays_personal_workout_title"
+                android:layout_gravity="left|top"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ποδια για αρχαριους"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/sundays_personal_workout_totworkouts"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="11 workouts"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+
+        android:id="@+id/beginners_legs_home"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardElevation="5dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_margin="10dp"
+        tools:ignore="MissingConstraints">
+
+
+
+        <ImageView
+            android:id="@+id/beginner_legs_image"
+            android:layout_width="match_parent"
+            android:src="@drawable/legs1"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY" />
+
+        <Button
+            android:id="@+id/chest_lvl1_btn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            style="@style/Widget.AppCompat.Button.Borderless"/>
+
+
+            <TextView
+                android:id="@+id/beginners__legs_text"
+                android:layout_gravity="left|top"
+                android:layout_margin="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ποδια για αρχαριους"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/personal_total_workouts"
+            android:layout_gravity="left|bottom"
+            android:layout_margin="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11 workouts"
+            android:textColor="@color/white"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
+
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
