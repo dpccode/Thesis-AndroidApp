@@ -100,9 +100,7 @@ public class HistoryActivity extends AppCompatActivity {
             //date.setText("24 aprili");
             if(preferences.getBoolean("workOut_deleted_from_histroy"+String.valueOf(finalI),false) != true){
                 layoutList.addView(resView,0);
-                //Collections.reverse(layoutList); // ADD THIS LINE TO REVERSE ORDER!
-                //layoutList.notifyDataSetChanged;
-                //layoutList.
+
 
             }
 
