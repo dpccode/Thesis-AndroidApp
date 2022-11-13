@@ -115,7 +115,7 @@ public class RestActivity extends AppCompatActivity {
         });
 
 
-        // initRecyclerView();
+
     }
 
 
@@ -138,7 +138,7 @@ public class RestActivity extends AppCompatActivity {
 
                 Intent intent = getIntent();
                 exercisesComplitedCount = intent.getIntExtra("exercises_complited_count",0);
-                //Toast.makeText(RestActivity.this,"mege8os listas "+exercisesComplitedCount,Toast.LENGTH_SHORT).show();
+
                 totalExercises = intent.getIntExtra("total_exercises",0);
                 program_title = intent.getStringExtra("program_title");
                 if (exercisesComplitedCount < totalExercises) {
@@ -209,7 +209,7 @@ public class RestActivity extends AppCompatActivity {
         if(gender.equals("Male")){
             imageView.setBackground(getResources().getDrawable(R.drawable.male_rest2));
         }else {
-            //imageView.setImageDrawable(getResources().getDrawable(R.drawable.woman_rest));
+
             imageView.setBackground(getResources().getDrawable(R.drawable.woman_rest));
         }
 

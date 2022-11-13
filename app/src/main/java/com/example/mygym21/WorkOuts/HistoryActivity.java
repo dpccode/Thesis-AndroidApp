@@ -77,13 +77,13 @@ public class HistoryActivity extends AppCompatActivity {
         });
 
         int total_workOuts_finished = preferences.getInt("total_workOuts_finished",0);
-        //Toast.makeText(getApplicationContext(),"to totalworkouts  einai "+total_workOuts_finished,Toast.LENGTH_LONG).show();
+
         for(int i = 1; i <= total_workOuts_finished ;i++){
             final View resView = getLayoutInflater().inflate(R.layout.activity_history_item, null, false);
             TextView title = resView.findViewById(R.id.history_workout_title);
             TextView date = resView.findViewById(R.id.history_workout_date);
             ImageButton delete = resView.findViewById(R.id.delete_item_from_history);
-            //title.setText(String.valueOf(i));
+
             title.setText(preferences.getString("workOut_title"+String.valueOf(i)," "));
             date.setText(preferences.getString("workOut_date"+String.valueOf(i)," "));
             final int finalI = i;
@@ -97,7 +97,7 @@ public class HistoryActivity extends AppCompatActivity {
                 }
             });
 
-            //date.setText("24 aprili");
+
             if(preferences.getBoolean("workOut_deleted_from_histroy"+String.valueOf(finalI),false) != true){
                 layoutList.addView(resView,0);
 
@@ -114,7 +114,6 @@ public class HistoryActivity extends AppCompatActivity {
     private void getCustomersData(){
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-
         customer_id = preferences.getInt("customer_id",0);
 
     }

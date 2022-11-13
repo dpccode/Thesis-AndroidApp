@@ -163,9 +163,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     exercisesComplitedCount++;
                     if (exercisesComplitedCount < totalExercises) {
-                        //totalExercises = intent.getIntExtra("total_exercises", 0);
 
-                        //Toast.makeText(ExerciseActivity2.this,"exercises_complited_count "+exercisesComplitedCount+" apo "+totalExercises,Toast.LENGTH_SHORT).show();
 
                         Intent intent = new Intent(ExerciseActivity.this, RestActivity.class);
                         //metaferw twn ari8mo twn sunolikwn askhsewn pou prepei na ektelestoun kai
@@ -178,22 +176,20 @@ public class ExerciseActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                     else{
+
                         workOutFinished();
-                        //pauseTimer();
-                        //workOuteFinished();
                         Intent intent = new Intent(ExerciseActivity.this, MainActivity.class);
                         intent.putExtra("program_title",program_title);
                         intent.putExtra("work_out_finished",true);
-                        //setResult(RESULT_OK);
                         finish();
-                        //startActivity(intent);
+
                     }
                 }
             });
         }
 
         if(program_title.contains("Personal")){
-            //youTubePlayer.setVisibility(View.GONE);
+
             exercise_weight = findViewById(R.id.exercise_weight);
             if(mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getWeight() > 0) {
                 exercise_weight.setVisibility(View.VISIBLE);
@@ -223,7 +219,7 @@ public class ExerciseActivity extends AppCompatActivity {
                 totalExercises = intent.getIntExtra("total_exercises",0);
                 program_title = intent.getStringExtra("program_title");
                 exercisesComplitedCount++;
-                //Toast.makeText(getApplicationContext(),"ta total eina "+totalExercises,Toast.LENGTH_SHORT).show();
+
                 if (exercisesComplitedCount < totalExercises) {
 
                     intent = new Intent(ExerciseActivity.this, RestActivity.class);
@@ -237,13 +233,8 @@ public class ExerciseActivity extends AppCompatActivity {
                 else{
                     workOutFinished();
                     intent = new Intent(ExerciseActivity.this, MainActivity.class);
-                    //finish();
                     intent.putExtra("program_title",program_title);
-                    //setResult(RESULT_OK);
-                    //intent.putExtra("work_out_finished",true);
-                    //startActivity(intent);
                     finish();
-                    //finish();
                 }
 
             }
@@ -299,7 +290,6 @@ public class ExerciseActivity extends AppCompatActivity {
 
         DateFormat df = new SimpleDateFormat("EEE, d MMM yyyy, HH:mm");
         String date = df.format(Calendar.getInstance().getTime());
-        //Toast.makeText(ExerciseActivity.this, "to date " + date, Toast.LENGTH_LONG).show();
         editor.putString("workOut_date" + String.valueOf(totalWorkOutsFinished), date).commit();
         editor.apply();
 
