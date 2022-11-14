@@ -30,9 +30,7 @@ public class LauncherActivity extends Activity {
     private void getCustomersData(){
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-
         login_status = preferences.getBoolean("login_status",false);
-        //Toast.makeText(getApplicationContext(),"to login status "+login_status,Toast.LENGTH_LONG).show();
     }
 
 }

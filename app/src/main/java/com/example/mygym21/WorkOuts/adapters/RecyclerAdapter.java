@@ -36,7 +36,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_work_out_item,parent,false);
-        //RecyclerView.ViewHolder holder = new RecyclerView.ViewHolder(view);
         ViewHolder holder = new ViewHolder(view);
         return holder;
     }
@@ -44,7 +43,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
 
-        //Exercise currentExercise = mExercises.get(i);
         ((ViewHolder) viewHolder).title.setText(String.valueOf(i + 1) + "/" + String.valueOf(getItemCount()) + ": " + mExercises.get(viewHolder.getAdapterPosition()).getTitle().toUpperCase());
         if(mExercises.get(viewHolder.getAdapterPosition()).getReps() == 0){
             if(mExercises.get(viewHolder.getAdapterPosition()).getExerciseMinutes() > 0) {
@@ -59,8 +57,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }
 
         ((ViewHolder)viewHolder).rest.setText("Rest: "+String.valueOf(mExercises.get(viewHolder.getAdapterPosition()).getRestSeconds())+"s");
-        //((ViewHolder)viewHolder).reps.setText(mExercises.get(i).getReps());
-
 
 
     }
@@ -84,7 +80,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             title = itemView.findViewById(R.id.exercise_title);
             rest = itemView.findViewById(R.id.rest_time);
             duration_or_reps = itemView.findViewById(R.id.exercise_duration_or_reps);
-            //parentLayout = itemView.findViewById(R.id.parent_layout);
         }
     }
 

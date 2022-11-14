@@ -18,9 +18,7 @@ public class ExerciseViewModel extends ViewModel {
     public MutableLiveData<List<Exercise>> mHomeExercises;
     private ExerciseRepository mRepository;
     private HomeRepository mHomeRepository;
-
     private int totalExercises;
-    //private MutableLiveData<Boolean> mIsUpdating = new MutableLiveData<>();
 
     public void init(){
             if(mExercises != null){
@@ -35,16 +33,6 @@ public class ExerciseViewModel extends ViewModel {
 
 
     }
-
-
-/*
-    public void addNewValue(final Exercise exercise){
-        List<Exercise> currentExercises = mExercises.getValue();
-        currentExercises.add(exercise);
-        mExercises.postValue(currentExercises);
-    }
-
- */
 
     public LiveData<List<Exercise>> getExercises(){
         return mExercises;

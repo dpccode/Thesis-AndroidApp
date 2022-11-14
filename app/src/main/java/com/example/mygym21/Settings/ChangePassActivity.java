@@ -107,13 +107,12 @@ public class ChangePassActivity extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(ChangePassActivity.this,"eimai sto error"+error,Toast.LENGTH_LONG).show();
 
                 AlertDialog dialog = new AlertDialog.Builder(ChangePassActivity.this).create();
                 dialog.setTitle("Requests status");
                 dialog.setMessage("Something went wrong!\nCheck your internet connection and try again later!");
                 dialog.show();
-                //Toast.makeText(getContext(),"No internet connection",Toast.LENGTH_SHORT).show();
+
             }
         }){
             @Override
@@ -138,7 +137,6 @@ public class ChangePassActivity extends AppCompatActivity {
 
         customer_id = preferences.getInt("customer_id",0);
         email = preferences.getString("email","");
-        //Toast.makeText(getActivity(),"to customers_id "+customer_id,Toast.LENGTH_SHORT).show();
     }
 
 

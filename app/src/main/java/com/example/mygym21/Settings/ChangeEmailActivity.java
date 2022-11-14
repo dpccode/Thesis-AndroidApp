@@ -97,8 +97,6 @@ public class ChangeEmailActivity extends AppCompatActivity {
                         }
                     });
                     dialog.show();
-                    //dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.teal));
-                    //Toast.makeText(ChangeEmailActivity.this, "Email Changed!!\nNew email address "+newEmail, Toast.LENGTH_LONG).show();
                 }
                 else{
                     mPass.getBackground().setColorFilter(getResources().getColor(R.color.red),
@@ -114,21 +112,19 @@ public class ChangeEmailActivity extends AppCompatActivity {
                         }
                     });
                     dialog.show();
-                    //Toast.makeText(ChangeEmailActivity.this,"Wrong Password or Email already used",Toast.LENGTH_LONG).show();
                 }
 
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                //Toast.makeText(ChangeEmailActivity.this,"eimai sto error"+error,Toast.LENGTH_LONG).show();
 
                 AlertDialog dialog = new AlertDialog.Builder(ChangeEmailActivity.this).create();
                 dialog.setTitle("Requests status");
                 dialog.setMessage("Something went wrong!\nCheck your internet connection and try again later!");
                 dialog.show();
                 dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.teal));
-                //Toast.makeText(getContext(),"No internet connection",Toast.LENGTH_SHORT).show();
+
             }
         }){
             @Override
@@ -148,12 +144,13 @@ public class ChangeEmailActivity extends AppCompatActivity {
 
 
     private void getCustomersData(){
+
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
         customer_id = preferences.getInt("customer_id",0);
         email = preferences.getString("email","");
-        //Toast.makeText(getActivity(),"to customers_id "+customer_id,Toast.LENGTH_SHORT).show();
+
     }
 
 

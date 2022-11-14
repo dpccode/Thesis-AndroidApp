@@ -63,15 +63,10 @@ public class EmailSender extends AppCompatActivity {
 
     private void sendEmail(String emailToAddress) {
 
-        //String recipientList = emailToAddress;
-        //String[] recipients = recipientList.split(",");
-
         Intent intent= new Intent(Intent.ACTION_SENDTO);
         intent.setData(Uri.parse("mailto:"));
         intent.putExtra(Intent.EXTRA_EMAIL,emailToAddress.split(","));
 
-
-        //intent.setType("message/rfc822");
         startActivity(Intent.createChooser(intent,"Choose an email client"));
 
     }

@@ -24,9 +24,8 @@ public class ExerciseRepository {
         return instance;
     }
 
-    //pretend to get data from web service
+
     public MutableLiveData<List<Exercise>> getExercises(){
-            //setExercises();
             MutableLiveData<List<Exercise>> data = new MutableLiveData<>();
             data.setValue(dataSet);
             return data;

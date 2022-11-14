@@ -61,7 +61,7 @@ public class HomeFragment extends Fragment {
     private CardView subStatusCardView;
 
 
-    //gia na mh fainetai to menu edw
+
     public void onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.refresh).setVisible(false);
         menu.findItem(R.id.log_out).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
@@ -76,7 +76,6 @@ public class HomeFragment extends Fragment {
                 return false;
             }
         });
-        //menu.clear();
     }
 
 
@@ -84,7 +83,6 @@ public class HomeFragment extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.log_out:
-
                 break;
 
             default:
@@ -133,7 +131,6 @@ public class HomeFragment extends Fragment {
 
 
             if (preferences.getString(String.valueOf(customer_id)+"image", null) != null) {
-                //Toast.makeText(getActivity(), preferences.getString("image", null), Toast.LENGTH_LONG).show();
 
                 String imageUriString = preferences.getString(String.valueOf(customer_id)+"image", null);
                 Uri myUri = Uri.parse(imageUriString);
@@ -227,7 +224,6 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //super method removed
 
         if (resultCode == Activity.RESULT_OK) {
             if (requestCode == 1000) {
@@ -277,7 +273,7 @@ public class HomeFragment extends Fragment {
             outputDate = df_output.format(parsed);
 
         } catch (ParseException e) {
-            //Toast.makeText(getActivity(),"Error",Toast.LENGTH_LONG);
+
         }
 
         return outputDate;

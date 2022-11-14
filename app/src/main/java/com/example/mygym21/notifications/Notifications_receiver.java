@@ -27,8 +27,6 @@ public class Notifications_receiver extends BroadcastReceiver {
         notificationsTitle = intent.getStringExtra("Notification title");
         notificationContent = intent.getStringExtra("Notification Content");
         String text = intent.getStringExtra("text");
-        //Builder.setContentTitle("Einai ena test");
-        //Builder.setContentText("Auth einai to text");
         Builder.setColor(Color.YELLOW);
         Builder.setSmallIcon(R.drawable.abs);
 
@@ -38,7 +36,6 @@ public class Notifications_receiver extends BroadcastReceiver {
             Builder.setContentTitle(notificationsTitle);
             Builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),
                     R.drawable.gains));
-            //Builder.setContentText(text);
             notificationManager.notify(100,Builder.build());
         }
 
@@ -46,7 +43,7 @@ public class Notifications_receiver extends BroadcastReceiver {
             Builder.setContentTitle(notificationsTitle);
             Builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),
                     R.drawable.shaker));
-            //Builder.setContentText(text);
+
             notificationManager.notify(101,Builder.build());
         }
 
@@ -54,7 +51,7 @@ public class Notifications_receiver extends BroadcastReceiver {
             Builder.setContentTitle(notificationsTitle);
             Builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),
                     R.drawable.lastmeal1));
-            //Builder.setContentText(text);
+
             notificationManager.notify(102,Builder.build());
         }
 
@@ -62,11 +59,9 @@ public class Notifications_receiver extends BroadcastReceiver {
             Builder.setContentTitle(notificationsTitle);
             Builder.setLargeIcon(BitmapFactory.decodeResource(context.getResources(),
                     R.drawable.shaker));
-            //Builder.setContentText(text);
+
             notificationManager.notify(103,Builder.build());
         }
-
-
 
     }
 }

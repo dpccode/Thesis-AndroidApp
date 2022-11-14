@@ -30,11 +30,7 @@ import java.util.Calendar;
 
 public class NotificationsActivity extends AppCompatActivity {
 
-    //public int mYear;
-    //public int mMonth;
-    //public int mDay;
     private PendingIntent pendingIntent;
-    //private long notificationTime;
     private long workOutNotTime;
     private long preWorkOutNotTime;
     private long lastPreWorkOutMealNotTime;
@@ -65,10 +61,7 @@ public class NotificationsActivity extends AppCompatActivity {
         setContentView(R.layout.notifications_avtivity);
         getSupportActionBar().setTitle("Notifications");
 
-        //Calendar notificationCalendar = Calendar.getInstance();
-
         final Calendar calendar2 = Calendar.getInstance();
-
 
         Button mConfirmButton = findViewById(R.id.confirm_button);
         Button mDateButton = findViewById(R.id.date_button);
@@ -94,7 +87,6 @@ public class NotificationsActivity extends AppCompatActivity {
         lastPreWorkOutMealCheckBoxStatus = preferences.getString("lastPreWorkOutCheckBoxStatus",null);
         postWorkOutCheckBoxStatus = preferences.getString("postWorkOutCheckBoxStatus",null);
         everyDayNotificationsSwitchStatus = preferences.getString("everyDayNotificationsSwitchStatus",null);
-
 
 
         if(workOutCheckBoxStatus != null) {
@@ -168,7 +160,6 @@ public class NotificationsActivity extends AppCompatActivity {
         mDateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(MainActivity.this, notificationCalendar.get(Calendar.HOUR_OF_DAY)+" "+notificationCalendar.get(Calendar.MINUTE),Toast.LENGTH_LONG).show();
 
                 final int year = c.get(Calendar.YEAR);
                 final int month = c.get(Calendar.MONTH);
@@ -224,8 +215,6 @@ public class NotificationsActivity extends AppCompatActivity {
 
         });
 
-        //Calendar newTime = Calendar.getInstance();
-
         mTimeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -250,11 +239,7 @@ public class NotificationsActivity extends AppCompatActivity {
                 },hourOfDay,minute,true);
 
                 timePickerDialog.show();
-                //timePickerDialog.dismiss();
 
-
-
-                //timePickerDialog.ge
 
                 TimePicker timePicker = new TimePicker(NotificationsActivity.this);
                 timePicker.setOnTimeChangedListener(new TimePicker.OnTimeChangedListener() {
@@ -265,9 +250,7 @@ public class NotificationsActivity extends AppCompatActivity {
                         newDate.set(Calendar.MINUTE,minute);
                     }
                 });
-                //.onTimeChanged(timePickerDialogsz,hourOfDay,minute);
 
-                //timePickerDialog.setContentView(timePicker);
                 timePickerDialog.setView(timePicker);
 
                 timePickerDialog.updateTime(newDate.get(Calendar.HOUR_OF_DAY),newDate.get(Calendar.MINUTE));
@@ -291,8 +274,6 @@ public class NotificationsActivity extends AppCompatActivity {
 
                 Toast.makeText(NotificationsActivity.this,"Changes Confirmed",Toast.LENGTH_SHORT).show();
 
-                //int currentHourIn24Format = rightNow.get(Calendar.HOUR_OF_DAY);
-                //int currentMinute = rightNow.get(Calendar.MINUTE);
                 long currentTime = rightNow.getTimeInMillis();
 
                 Intent intent = new Intent(getApplicationContext(), Notifications_receiver.class);
@@ -300,10 +281,7 @@ public class NotificationsActivity extends AppCompatActivity {
                 AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 
                 if(workOutCheckBox.isChecked()){
-                    //sampleUi.set(workOutCheckBoxStatusPosition,"true");
                     editor.putString("workOutCheckBoxStatus","true").commit();
-                    //editor.commit();
-                    //editor.apply();
 
                     Calendar workOutCalendar =  Calendar.getInstance();
                     intent.putExtra("Notification Content","WorkOutTime");
@@ -326,17 +304,11 @@ public class NotificationsActivity extends AppCompatActivity {
                     }
                 }
                 else{
-                    //sampleUi.set(workOutCheckBoxStatusPosition,"false");
                     editor.putString("workOutCheckBoxStatus","false").commit();
-                    //editor.commit();
-                    //editor.apply();
                 }
 
                 if(preWorkOutCheckBox.isChecked()){
-                    ///sampleUi.set(preWorkOutCheckBoxStatusPosition,"true");
                     editor.putString("preWorkOutCheckBoxStatus","true").commit();
-                    //editor2.commit();
-                    //editor2.apply();
 
                     Calendar preWorkOutCalendar =  Calendar.getInstance();
                     intent.putExtra("Notification Content","PreWorkOut");
@@ -357,17 +329,12 @@ public class NotificationsActivity extends AppCompatActivity {
                     }
                 }
                 else{
-                    //sampleUi.set(preWorkOutCheckBoxStatusPosition,"false");
                     editor.putString("preWorkOutCheckBoxStatus","false").commit();
-                    //editor2.commit();
-                    //editor2.apply();
                 }
 
                 if(lastPreWorkOutMealCheckBox.isChecked()){
-                    //sampleUi.set(lastPreWorkOutMealCheckBoxStatusPosition,"true");
+
                     editor.putString("lastPreWorkOutCheckBoxStatus","true").commit();
-                    //editor3.commit();
-                    //editor3.apply();
 
                     Calendar lastPreWorkOutMealCalendar =  Calendar.getInstance();
                     intent.putExtra("Notification Content","LastPreWorkOutMeal");
@@ -387,17 +354,12 @@ public class NotificationsActivity extends AppCompatActivity {
                         }
                     }
                 }else {
-                    //sampleUi.set(lastPreWorkOutMealCheckBoxStatusPosition,"false");
                     editor.putString("lastPreWorkOutCheckBoxStatus","false").commit();
-                    //editor3.commit();
-                    //editor.apply();
                 }
 
                 if(postWorkOutCheckBox.isChecked()){
-                    //sampleUi.set(postWorkOutCheckBoxStatusPosition,"true");
+
                     editor.putString("postWorkOutCheckBoxStatus","true").commit();
-                    //editor4.commit();
-                    //editor4.apply();
 
                     Calendar postWorkOutCalendar = Calendar.getInstance();
                     intent.putExtra("Notification Content","PostWorkOut");
@@ -417,17 +379,9 @@ public class NotificationsActivity extends AppCompatActivity {
                         }
                     }
                 }else{
-                    //sampleUi.set(postWorkOutCheckBoxStatusPosition,"false");
                     editor.putString("postWorkOutCheckBoxStatus","false").commit();
-                    //editor4.commit();
-                    //editor4.apply();
                 }
-                //sampleUi.set(newDatePosition,newDate.toString());
-                //savedUiPreferencesSet.addAll(sampleUi);
-                //editor.putStringSet("savedUiPreferencesSet",sampleUi).commit();
                 editor.apply();
-                //Toast.makeText(getApplicationContext(),"to date se string einai "+ sampleUi.toString(),Toast.LENGTH_LONG).show();
-
             }
         });
     }

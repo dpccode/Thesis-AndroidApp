@@ -77,13 +77,10 @@ public class PersonalFragment extends Fragment {
 
 
     public void onPrepareOptionsMenu(Menu menu) {
-        //getCustomersData();
-        //Toast.makeText(getContext(),"sub type= "+subscription_type,Toast.LENGTH_LONG).show();
         if(subscription_type.equals("BASIC") || subscription_type.equals("MID")) {
             menu.findItem(R.id.refresh).setVisible(false);
         }
         menu.findItem(R.id.log_out).setVisible(false);
-        //menu.clear();
     }
 
     @SuppressLint("ResourceType")
@@ -121,12 +118,9 @@ public class PersonalFragment extends Fragment {
             return root;
         }else {
 
-            //Toast.makeText(getContext(),"mapinei k edw omws "+subscription_type,Toast.LENGTH_LONG).show();
             View root = inflater.inflate(R.layout.fragment_personal, container, false);
             setHasOptionsMenu(true);
             super.onCreate(savedInstanceState);
-
-            //layoutList = root.findViewById(R.id.workout_layout);
 
 
             getWorkoutPrograms();
@@ -230,7 +224,6 @@ public class PersonalFragment extends Fragment {
                 }
             });
 
-
             return root;
         }
     }
@@ -264,7 +257,7 @@ public class PersonalFragment extends Fragment {
                     SharedPreferences preferences = getActivity().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
                     SharedPreferences.Editor editor = preferences.edit();
                     editor.putString("personal_exercises",response).commit();
-                    //Toast.makeText(getContext(),"response"+jsonArray,Toast.LENGTH_LONG).show();
+
                     setPrograms(jsonArray);
                 } catch (JSONException e) {
                     Toast.makeText(getContext(),"mpainei sto catch "+e,Toast.LENGTH_LONG).show();
@@ -302,9 +295,7 @@ public class PersonalFragment extends Fragment {
     }
 
     private void setPrograms(JSONArray jsonArray) throws JSONException {
-        //int i = 0;
-        //String copy;
-        //Toast.makeText(getContext(), "to length einai "+jsonArray.length(), Toast.LENGTH_SHORT).show();
+
         mondayJsonArray = new JSONArray();
         tuesdayJsonArray = new JSONArray();
         wednesdayJsonArray = new JSONArray();
@@ -317,7 +308,6 @@ public class PersonalFragment extends Fragment {
         for(int i = 0;i<jsonArray.length();i++) {
             try {
                 JSONObject programs_jsonObject = jsonArray.getJSONObject(i);
-
 
                 switch (programs_jsonObject.getString("day")) {
                     case "Monday":
@@ -355,62 +345,73 @@ public class PersonalFragment extends Fragment {
             mondayWorkOutTotExercises.setText(String.valueOf(mondayJsonArray.length())+" workouts");
             mondayCardView.setVisibility(View.VISIBLE);
             chooseImageByGenderAndType(mondayImage,mondayJsonArray.getJSONObject(1).getString("category"));
-            //Toast.makeText(getActivity(),"to type einai"+mondayJsonArray.getJSONObject(1).getString("category"),Toast.LENGTH_LONG).show();
+
         }else{
             mondayCardView.setVisibility(View.GONE);
         }
 
         if(tuesdayJsonArray.length() > 0){
-            //Toast.makeText(getContext(), "mpainei edw sto erro edw ", Toast.LENGTH_SHORT).show();
+
             tuesdayWorkOutTitle.setText(tuesdayJsonArray.getJSONObject(1).getString("p_title"));
             tuesdayWorkOutTotExercises.setText(String.valueOf(tuesdayJsonArray.length())+" workouts");
             tuesdayCardView.setVisibility(View.VISIBLE);
             chooseImageByGenderAndType(tuesdayImage,tuesdayJsonArray.getJSONObject(1).getString("category"));
+
         }else{
             tuesdayCardView.setVisibility(View.GONE);
         }
 
         if(wednesdayJsonArray.length() > 0){
+
             wednesdayWorkOutTitle.setText(wednesdayJsonArray.getJSONObject(1).getString("p_title"));
             wednesdayWorkOutTotExercises.setText(String.valueOf(wednesdayJsonArray.length())+" workouts");
             wednesdayCardView.setVisibility(View.VISIBLE);
             chooseImageByGenderAndType(wednesdayImage,wednesdayJsonArray.getJSONObject(1).getString("category"));
+
         }else{
             wednesdayCardView.setVisibility(View.GONE);
         }
 
         if(thursdayJsonArray.length() > 0){
+
             thursdayWorkOutTitle.setText(thursdayJsonArray.getJSONObject(1).getString("p_title"));
             thursdayWorkOutTotExercises.setText(String.valueOf(thursdayJsonArray.length())+" workouts");
             thursdayCardView.setVisibility(View.VISIBLE);
             chooseImageByGenderAndType(thursdayImage,thursdayJsonArray.getJSONObject(1).getString("category"));
+
         }else{
             thursdayCardView.setVisibility(View.GONE);
         }
 
         if(fridayJsonArray.length() > 0){
+
             fridayWorkOutTitle.setText(fridayJsonArray.getJSONObject(1).getString("p_title"));
             fridayWorkOutTotExercises.setText(String.valueOf(fridayJsonArray.length())+" workouts");
             fridayCardView.setVisibility(View.VISIBLE);
             chooseImageByGenderAndType(fridayImage,fridayJsonArray.getJSONObject(1).getString("category"));
+
         }else{
             fridayCardView.setVisibility(View.GONE);
         }
 
         if(saturdayJsonArray.length() > 0){
+
             saturdayWorkOutTitle.setText(saturdayJsonArray.getJSONObject(1).getString("p_title"));
             saturdayWorkOutTotExercises.setText(String.valueOf(saturdayJsonArray.length())+" workouts");
             saturdayCardView.setVisibility(View.VISIBLE);
             chooseImageByGenderAndType(saturdayImage,saturdayJsonArray.getJSONObject(1).getString("category"));
+
         }else{
             saturdayCardView.setVisibility(View.GONE);
         }
 
         if(sundayJsonArray.length() > 0){
+
             sundayWorkOutTitle.setText(sundayJsonArray.getJSONObject(1).getString("p_title"));
             sundayWorkOutTotExercises.setText(String.valueOf(sundayJsonArray.length())+" workouts");
             sundayCardView.setVisibility(View.VISIBLE);
             chooseImageByGenderAndType(sundayImage,sundayJsonArray.getJSONObject(1).getString("category"));
+
         }else{
             sundayCardView.setVisibility(View.GONE);
         }
@@ -418,6 +419,7 @@ public class PersonalFragment extends Fragment {
     }
 
     private void setViews(View root){
+
         mondayWorkOutTitle = root.findViewById(R.id.mondays_personal_workout_title);
         mondayWorkOutTotExercises = root.findViewById(R.id.mondays_personal_workout_totworkouts);
         mondayCardView = root.findViewById(R.id.mondays_personal_workout);
@@ -524,13 +526,13 @@ public class PersonalFragment extends Fragment {
 
 
     private void getCustomersData(){
+
         SharedPreferences preferences = getActivity().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
         customer_id = preferences.getInt("customer_id",0);
         gender = preferences.getString("gender","Male");
         subscription_type = preferences.getString("subscription_type","BASIC");
-        //Toast.makeText(getActivity(),"to customers_id "+customer_id,Toast.LENGTH_SHORT).show();
 
     }
 

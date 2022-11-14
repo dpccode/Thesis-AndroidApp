@@ -52,12 +52,9 @@ public class ExerciseActivity extends AppCompatActivity {
     private Button mPausebtn;
     private Button mSkipbtn;
     private String program_title;
-
     private RecyclerView mRecyclerView;
     private RecyclerAdapter mAdapter;
     private ExerciseViewModel mExerciseViewModel;
-    //private WorkOut mWorkOut;
-    //private MainActivity mainActivity;
     private int totalExercises;
     private List<Exercise> mExercises = new ArrayList<>();
     private YouTubePlayerView youTubePlayer;
@@ -92,12 +89,10 @@ public class ExerciseActivity extends AppCompatActivity {
 
         if(mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getReps() == 0){
             setContentView(R.layout.work_out_with_coutdown );
-            //youTubePlayer = findViewById(R.id.videoView);
             exerciseTitle = findViewById(R.id.exercise_title_work_out_with_coutdown);
             exerciseTitle.setText(mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getTitle().toUpperCase());
 
             START_TIME_IN_MILLIS = ((mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getExerciseMinutes() * 60) + mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getExerciseSeconds()) * 1000;
-            //Toast.makeText(ExerciseActivity2.this,"8esh "+exercisesComplitedCount+"seconds "+mExerciseViewModel.getBeginnersExercises().getValue().get(exercisesComplitedCount).getRestSeconds(),Toast.LENGTH_LONG).show();
             mTimeLeftInMillis = START_TIME_IN_MILLIS;
 
             startTimer();
@@ -120,7 +115,6 @@ public class ExerciseActivity extends AppCompatActivity {
                     pauseTimer();
                     exercisesComplitedCount++;
                     if (exercisesComplitedCount < totalExercises) {
-                        //totalExercises = intent.getIntExtra("total_exercises",0);
                         Intent intent = new Intent(ExerciseActivity.this, ExerciseActivity.class);
                         intent.putExtra("total_exercises",totalExercises);
                         intent.putExtra("exercises_complited_count",exercisesComplitedCount);
@@ -133,22 +127,17 @@ public class ExerciseActivity extends AppCompatActivity {
                         workOutFinished();
                         Intent intent = new Intent(ExerciseActivity.this, MainActivity.class);
                         intent.putExtra("program_title",program_title);
-                        //startActivity(intent);
-                        //setResult(RESULT_OK);
                         finish();
-                        //startActivity(intent);
-                        //finishAffinity();
                     }
                 }
             });
         }
         else{
             setContentView(R.layout.work_out_with_reps);
-            //youTubePlayer = findViewById(R.id.videoView);
             TextView mReps;
             mReps = findViewById(R.id.exercise_reps);
             mReps.setText(String.valueOf("x"+mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getReps()));
-            //Toast.makeText(ExerciseActivity2.this,"exercises_complited_count "+exercisesComplitedCount+" apo "+totalExercises,Toast.LENGTH_SHORT).show();
+
 
             exerciseTitle = findViewById(R.id.exercise_title_work_out_with_reps);
             exerciseTitle.setText(mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getTitle().toUpperCase());
@@ -283,8 +272,6 @@ public class ExerciseActivity extends AppCompatActivity {
         int totalWorkOutsFinished = preferences.getInt("total_workOuts_finished", 0);
         totalWorkOutsFinished++;
         editor.putInt("total_workOuts_finished", totalWorkOutsFinished).commit();
-        //if(program_type.equals("personal"))
-        //if(program_title.contains("personal"))
         editor.putString("workOut_title" + String.valueOf(totalWorkOutsFinished), program_title).commit();
 
 
@@ -298,9 +285,7 @@ public class ExerciseActivity extends AppCompatActivity {
     private void getCustomersData(){
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-
         customer_id = preferences.getInt("customer_id",0);
-
     }
 
     public  void getThemePref(){

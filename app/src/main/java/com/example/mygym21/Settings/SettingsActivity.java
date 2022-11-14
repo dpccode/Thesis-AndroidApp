@@ -92,7 +92,6 @@ public class SettingsActivity extends AppCompatActivity {
     private void getCustomersData(){
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-
         customer_id = preferences.getInt("customer_id",0);
     }
 

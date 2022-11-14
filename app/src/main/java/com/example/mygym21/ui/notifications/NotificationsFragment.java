@@ -40,7 +40,6 @@ public class NotificationsFragment extends Fragment {
     public void onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.log_out).setVisible(false);
         menu.findItem(R.id.refresh).setVisible(false);
-        //menu.clear();
     }
 
 
@@ -67,7 +66,6 @@ public class NotificationsFragment extends Fragment {
 
         customer_id = preferences.getInt("customer_id",0);
         gender = preferences.getString("gender","Male");
-        //Toast.makeText(getActivity(),"to customers_id "+customer_id,Toast.LENGTH_SHORT).show();
     }
 
 
@@ -148,7 +146,6 @@ public class NotificationsFragment extends Fragment {
         legsBeginnerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getActivity(),"mphka edw sta legs")
                 intent.putExtra("program_title","Home: "+"Beginners legs");
                 startActivity(intent);
             }

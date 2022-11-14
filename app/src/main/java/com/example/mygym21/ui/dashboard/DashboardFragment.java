@@ -76,13 +76,12 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
 
     JSONArray mResponse = new JSONArray();
 
-    //gia na mh fainetai to menu edw
+    //in order to hide menu
     public void onPrepareOptionsMenu(Menu menu) {
         if(subscription_type.equals("BASIC")) {
             menu.findItem(R.id.refresh).setVisible(false);
         }
         menu.findItem(R.id.log_out).setVisible(false);
-        //menu.clear();
     }
 
     @SuppressLint("ResourceType")
@@ -92,7 +91,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
             case R.id.refresh:
                 refreshBtnClicked = true;
                 getOpenGroups();
-                //refreshBtnClicked = false;
                 break;
 
             default:
@@ -114,7 +112,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
             View root = inflater.inflate(R.layout.locked_layout, container, false);
             locked_text = root.findViewById(R.id.locked_text);
             locked_text.setText("In order to get access here buy  <<Medium>>  or  <<Premium>>  package");
-            //setMenuVisibility(false);
             setHasOptionsMenu(true);
             return root;
         }else {
@@ -304,8 +301,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
 
     private void createResViews(JSONArray response){
 
-
-        //layoutList.removeAllViews();
         monday_ll.removeAllViews();
         tuesday_ll.removeAllViews();
         wednesday_ll.removeAllViews();
@@ -327,7 +322,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
                 ImageButton cancelResBtn = resView.findViewById(R.id.cancel_resBtn);
                 final int finalId = reservations_jsonObject.getInt("id");
 
-                //edw na valw to customers_id apo to login anti gia 1
                 if(res_customers_id == customer_id){
                     makeResBtn.setClickable(false);
                     cancelResBtn.setClickable(true);
@@ -375,8 +369,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
 
                 title.setText(reservations_jsonObject.getString("title"));
                 total_customers.setText(reservations_jsonObject.getString("current_persons")+"/"+reservations_jsonObject.getString("max_persons"));
-                //res_dateView.setText(reservations_jsonObject.get("day").toString()+" "+reservations_jsonObject.get("time").toString());
-                //Toast.makeText(getContext(),"eimai edw3 "+ reservations_jsonObject.getInt("weekday"),Toast.LENGTH_LONG).show();
 
                 switch(reservations_jsonObject.getInt("day")) {
                     case 0:
@@ -413,7 +405,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
                 e.printStackTrace();
             }
         }
-        //mTextView.setText(response.getJSONObject(0).getString("title"));
 
     }
 
@@ -423,20 +414,12 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        //layoutList.setVisibility();
-        //Toast.makeText(getActivity(),"to theme sto dashboard "+theme,Toast.LENGTH_SHORT).show();
         if(theme.equals("Light"))
             ((TextView) parent.getChildAt(0)).setTextColor(Color.BLACK);
         else
             ((TextView) parent.getChildAt(0)).setTextColor(Color.WHITE);
 
-
         layoutList.removeAllViews();
-        //Toast.makeText(getActivity(),"edw to id "+id,Toast.LENGTH_LONG).show();
-
-
-        //na valw edw prwto na pernei to monaday eksw apo to switch
-        //kai sthn oncreateview na kanei thn create res views
 
         switch(position) {
             case 0:
@@ -498,7 +481,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
 
         customer_id = preferences.getInt("customer_id",0);
         subscription_type = preferences.getString("subscription_type","BASIC");
-        //Toast.makeText(getActivity(),"to customers_id "+customer_id,Toast.LENGTH_SHORT).show();
     }
 
 
@@ -507,8 +489,5 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
         SharedPreferences preferences = getContext().getSharedPreferences(String.valueOf(customer_id)+"themePref", Context.MODE_PRIVATE);
         theme = preferences.getString("theme","Light");
     }
-
-
-
 
 }

@@ -102,18 +102,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
         getSupportActionBar().setTitle(name+" "+last_name);
-        //getSupportActionBar().setTitle(Html.fromHtml("<font color='#ff0000'>" +"Dimos Christodoulopoulos"+"</font>"));
-
-
-
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.nav_view);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        //navigation.setItemBackground(@Dra);
-
-
 
         if (savedInstanceState != null) {
 
@@ -123,16 +114,12 @@ public class MainActivity extends AppCompatActivity {
             fragment4 = fm.getFragment(savedInstanceState, "Personalfragment");
 
         }
-        else{
-            //Toast.makeText(getApplicationContext(),"edw skaei",Toast.LENGTH_LONG).show();
-        }
+
 
         fm.beginTransaction().add(R.id.container, fragment4, "4").hide(fragment4).commit();
         fm.beginTransaction().add(R.id.container, fragment3, "3").hide(fragment3).commit();
         fm.beginTransaction().add(R.id.container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.container, fragment1, "1").commit();
-
-
 
 
     }

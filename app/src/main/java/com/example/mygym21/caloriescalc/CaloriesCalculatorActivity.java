@@ -48,7 +48,6 @@ public class CaloriesCalculatorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_calories_calculator);
         getSupportActionBar().setTitle("Calories Calculator");
 
-        //getCustomersData();
 
         final TextView heightTextView = findViewById(R.id.heightTextView);
         final TextView weightTextView = findViewById(R.id.weightTextView);
@@ -70,13 +69,6 @@ public class CaloriesCalculatorActivity extends AppCompatActivity {
         Button calculateBtn = findViewById(R.id.calculateBtn);
 
 
-
-
-
-        //heigth = Integer.parseInt(value);
-        //weigth = Integer.parseInt(weigthTextView.getText().toString());
-        //age    = Integer.parseInt(ageTextView.getText().toString());
-
         calculateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,14 +85,7 @@ public class CaloriesCalculatorActivity extends AppCompatActivity {
                     age    = Integer.parseInt(ageTextView.getText().toString());
                 }
 
-                //heigth = heigth / 100;
-
-                //BMI = weight / Math.pow(height,2);
-
-
-
                 BMR = (10 * weight) + (6.25 * height) - (5 * age);
-                //Toast.makeText(getApplicationContext(),"to heigh einai "+String.valueOf(BMR),Toast.LENGTH_LONG).show();
 
                 if(gender.equals("Male")){
                     BMR -= 5;
@@ -132,7 +117,6 @@ public class CaloriesCalculatorActivity extends AppCompatActivity {
                 weightLossCalories = calories * 0.81;
                 extremeWeightLossCalories = calories * 0.63;
 
-
                 maintainWeightTextView.setText("Maintain weight: " + String.valueOf(new DecimalFormat("##").format(calories))+"cal/day");
                 mildWeightLossTextView.setText("Mild weight loss(0.25kg/week): " + String.valueOf(new DecimalFormat("##").format(mildWeightLossCalories))+"cal/day");
                 weightLossTextView.setText("Weight loss(0.5kg/week): " + String.valueOf(new DecimalFormat("##").format(weightLossCalories))+"cal/day");
@@ -143,8 +127,6 @@ public class CaloriesCalculatorActivity extends AppCompatActivity {
                 fatTextView.setText(String.valueOf(new DecimalFormat("##.##").format(fat))+"g");
             }
         });
-
-
 
     }
 
