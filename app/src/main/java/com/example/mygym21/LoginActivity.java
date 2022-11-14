@@ -39,15 +39,11 @@ public class LoginActivity extends AppCompatActivity {
     private EditText emailEditText,passwordEditText;
     private Button loginBtn;
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         getSupportActionBar().setTitle("Login");
-
 
         emailEditText = findViewById(R.id.email);
         passwordEditText = findViewById(R.id.password);
@@ -63,8 +59,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
-        //setContentView(R.layout.activity_login);
     }
 
 
@@ -72,9 +66,6 @@ public class LoginActivity extends AppCompatActivity {
         RequestQueue rq;
         rq = Volley.newRequestQueue(LoginActivity.this);
         String url = "http://192.168.1.5:80/api/api/customer/login.php?email="+mEmail+"&password="+mPass;
-
-
-
 
         final StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
             @Override
@@ -130,7 +121,6 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 
-
         try {
             editor.clear().commit();
             JSONArray jsonArray= new JSONArray(res);
@@ -154,8 +144,5 @@ public class LoginActivity extends AppCompatActivity {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-
     }
-
 }

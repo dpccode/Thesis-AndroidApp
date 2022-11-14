@@ -50,7 +50,6 @@ public class NotificationsFragment extends Fragment {
         setHasOptionsMenu(true);
         super.onCreate(savedInstanceState);
 
-
         getCustomersData();
         View root = inflater.inflate(R.layout.fragment_notifications, container, false);
         setViews(root);
@@ -123,7 +122,6 @@ public class NotificationsFragment extends Fragment {
             absAdvancedImage.setImageDrawable(getResources().getDrawable(R.drawable.female_abs_advanced));
 
         }
-
     }
 
 
@@ -247,7 +245,6 @@ public class NotificationsFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
     }
 
 }

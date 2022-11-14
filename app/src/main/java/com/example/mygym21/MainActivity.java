@@ -121,7 +121,6 @@ public class MainActivity extends AppCompatActivity {
         fm.beginTransaction().add(R.id.container, fragment2, "2").hide(fragment2).commit();
         fm.beginTransaction().add(R.id.container, fragment1, "1").commit();
 
-
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -164,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
 
-
         fm.putFragment(outState,"HomeFragment",fragment1);
         fm.putFragment(outState,"DashboardFragment",fragment2);
         fm.putFragment(outState,"Notificationsfragment",fragment3);
@@ -188,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void getCustomersData(){
+
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 

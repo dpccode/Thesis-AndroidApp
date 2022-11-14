@@ -42,8 +42,6 @@ public class RestActivity extends AppCompatActivity {
     private TextView nextExercise;
     ImageView restImage;
 
-    //MyTimer mTimer = new MyTimer();
-
     private RecyclerView mRecyclerView;
     private RecyclerAdapter mAdapter;
     private ExerciseViewModel mExerciseViewModel;
@@ -82,10 +80,8 @@ public class RestActivity extends AppCompatActivity {
             nextExercise.setText(mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getTitle().toUpperCase());
         }
         else{
-            //finish();
             nextExercise.setText("Its the last exercise!!");
         }
-
 
         startTimer();
         mPausebtn = findViewById(R.id.Pause_rest);
@@ -113,9 +109,6 @@ public class RestActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
-
     }
 
 
@@ -161,7 +154,6 @@ public class RestActivity extends AppCompatActivity {
         mCountDownTimer.cancel();
         mTimerRunning = false;
         mPausebtn.setText("Continue");
-
     }
 
     private void continueTimer() {
@@ -175,9 +167,7 @@ public class RestActivity extends AppCompatActivity {
     private void updateProgressBar(int progr) {
         ProgressBar pb = findViewById(R.id.progressBar2);
         step2 = 3;
-
         pb.setProgress(100 - progr);
-
     }
 
 
@@ -188,7 +178,6 @@ public class RestActivity extends AppCompatActivity {
 
         mTextViewCountDown = findViewById(R.id.coutDown);
         mTextViewCountDown.setText(timeLeftFormatted);
-
     }
 
     private void getCustomersData(){

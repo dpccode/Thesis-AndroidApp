@@ -24,7 +24,6 @@ public class ExerciseRepository {
         return instance;
     }
 
-
     public MutableLiveData<List<Exercise>> getExercises(){
             MutableLiveData<List<Exercise>> data = new MutableLiveData<>();
             data.setValue(dataSet);
@@ -42,10 +41,7 @@ public class ExerciseRepository {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }
-
     }
-
 
 }

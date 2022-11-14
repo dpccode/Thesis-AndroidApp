@@ -61,7 +61,6 @@ public class HomeFragment extends Fragment {
     private CardView subStatusCardView;
 
 
-
     public void onPrepareOptionsMenu(Menu menu) {
         menu.findItem(R.id.refresh).setVisible(false);
         menu.findItem(R.id.log_out).setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
@@ -150,7 +149,6 @@ public class HomeFragment extends Fragment {
             }
 
 
-
         root.findViewById(R.id.picture).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -166,7 +164,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
 
 
         contactUs.setOnClickListener(new View.OnClickListener() {
@@ -242,7 +239,6 @@ public class HomeFragment extends Fragment {
             }
         }
     }
-
 
 
     private void getCustomersData(){

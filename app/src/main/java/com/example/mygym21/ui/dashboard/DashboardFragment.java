@@ -70,10 +70,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
     private String subscription_type,theme;
     private TextView locked_text;
     private Boolean refreshBtnClicked = false;
-
-
-
-
     JSONArray mResponse = new JSONArray();
 
     //in order to hide menu
@@ -126,9 +122,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             spinner.setAdapter(adapter);
             spinner.setOnItemSelectedListener(DashboardFragment.this);
-            
-
-
 
             monday_ll = new LinearLayout(getActivity());
             monday_ll.setOrientation(LinearLayout.VERTICAL);
@@ -154,7 +147,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
             getCustomersData();
             getOpenGroups();
 
-
             return root;
         }
 
@@ -167,13 +159,10 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
         rq = Volley.newRequestQueue(getActivity());
         String url = "http://192.168.1.5:80/api/api/groups/read.php?customers_id="+customer_id;
 
-
         ProgressDialog dialog = null;
         if(refreshBtnClicked){
            dialog = ProgressDialog.show(getActivity(), "","Loading. Please wait...", true);
         }
-
-
 
         final ProgressDialog finalDialog = dialog;
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
@@ -201,9 +190,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
             }
         });
 
-
         rq.add(stringRequest);
-
     }
 
 
@@ -251,9 +238,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
         };
 
         rq.add(stringRequest);
-
     }
-
 
 
     public void cancelReservation(final int res_id, final int cust_id){
@@ -293,10 +278,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
 
         rq.add(stringRequest);
     }
-
-
-
-
 
 
     private void createResViews(JSONArray response){
@@ -366,7 +347,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
                     });
                 }
 
-
                 title.setText(reservations_jsonObject.getString("title"));
                 total_customers.setText(reservations_jsonObject.getString("current_persons")+"/"+reservations_jsonObject.getString("max_persons"));
 
@@ -405,11 +385,7 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
                 e.printStackTrace();
             }
         }
-
     }
-
-
-
 
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -462,18 +438,12 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
                 }
                 break;
         }
-
-
-
     }
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
 
-
     }
-
-
 
     private void getCustomersData(){
         SharedPreferences preferences = getContext().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
@@ -482,8 +452,6 @@ public class DashboardFragment extends Fragment implements AdapterView.OnItemSel
         customer_id = preferences.getInt("customer_id",0);
         subscription_type = preferences.getString("subscription_type","BASIC");
     }
-
-
 
     public  void getThemePref(){
         SharedPreferences preferences = getContext().getSharedPreferences(String.valueOf(customer_id)+"themePref", Context.MODE_PRIVATE);

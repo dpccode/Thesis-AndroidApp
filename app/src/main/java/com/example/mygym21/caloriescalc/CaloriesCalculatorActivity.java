@@ -29,7 +29,6 @@ public class CaloriesCalculatorActivity extends AppCompatActivity {
     private double mildWeightLossCalories;
     private double weightLossCalories;
     private double extremeWeightLossCalories;
-
     private double proteinCalories;
     private double carbsCalories;
     private double fatCalories;
@@ -73,7 +72,6 @@ public class CaloriesCalculatorActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!heightTextView.getText().toString().equals("")){
-                    //Toast.makeText(getApplicationContext(),"eimai edw swsta",Toast.LENGTH_LONG).show();
                     height = Integer.parseInt(heightTextView.getText().toString());
                 }
 

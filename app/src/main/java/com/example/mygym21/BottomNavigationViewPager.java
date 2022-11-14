@@ -20,7 +20,6 @@ public class BottomNavigationViewPager extends ViewPager {
         if (this.enabled) {
             return super.onTouchEvent(event);
         }
-
         return false;
     }
 
@@ -29,7 +28,6 @@ public class BottomNavigationViewPager extends ViewPager {
         if (this.enabled) {
             return super.onInterceptTouchEvent(event);
         }
-
         return false;
     }
 

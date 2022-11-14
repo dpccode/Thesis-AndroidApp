@@ -23,7 +23,6 @@ public class HomeRepository {
         return instance;
     }
 
-
     public void setPersonalExercises(JSONArray jsonArray){
 
         dataSet.clear();
@@ -35,7 +34,6 @@ public class HomeRepository {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
         }
 
     }

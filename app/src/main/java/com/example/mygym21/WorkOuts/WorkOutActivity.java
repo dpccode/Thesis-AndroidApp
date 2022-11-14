@@ -49,7 +49,6 @@ public class WorkOutActivity extends AppCompatActivity {
     private int exercisesCompletedCount;
     private String program_title,theme;
     private int customer_id;
-    //MyTimer mTimer = new MyTimer();
 
     private RecyclerView mRecyclerView;
     private RecyclerAdapter mAdapter;
@@ -78,23 +77,14 @@ public class WorkOutActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Workout List");
         mRecyclerView = findViewById(R.id.recycler_view);
-        //mRecyclerView.setHasFixedSize(true);
         mStartbtn = findViewById(R.id.start_workout_btn);
         totalExercisesNum = findViewById(R.id.total_exercises);
 
         Intent intent = getIntent();
-        //workOutFinished = intent.getBooleanExtra("work_out_finished", false);
         program_title = intent.getStringExtra("program_title");
-        //Toast.makeText(WorkOutActivity.this,"program type einai sthn arxh tou work out "+program_type,Toast.LENGTH_LONG).show();
-
-
-
-
-        //Toast.makeText(getApplicationContext(),"mege8os listas "+mAdapter.getItemCount(),Toast.LENGTH_SHORT).show();
 
         mExerciseViewModel = ViewModelProviders.of(WorkOutActivity.this).get(ExerciseViewModel.class);
         mExerciseViewModel.init();
-
 
         if(program_title.contains("Personal")){
             String program_exercices = intent.getStringExtra("program_exercises");
@@ -110,12 +100,11 @@ public class WorkOutActivity extends AppCompatActivity {
 
                 initHomeRecyclerView();
                 totalExercisesNum.setText(String.valueOf(mAdapter.getItemCount())+" workouts");
-                //Toast.makeText(getApplicationContext(),"comple "+mAdapter.getItemCount(),Toast.LENGTH_LONG).show();
+
             } catch (JSONException e) {
                 Toast.makeText(getApplicationContext(),"mpainei sto error "+e,Toast.LENGTH_LONG).show();
                 e.printStackTrace();
             }
-
         }else{
             switch (program_title) {
                 case "Home: Beginners legs":
@@ -167,9 +156,6 @@ public class WorkOutActivity extends AppCompatActivity {
             totalExercisesNum.setText(String.valueOf(mAdapter.getItemCount())+" workouts");
         }
 
-
-
-
         mStartbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -186,35 +172,30 @@ public class WorkOutActivity extends AppCompatActivity {
             }
         });
 
-        //Toast.makeText(getApplicationContext(),"mege8os listas "+mAdapter.getItemCount(),Toast.LENGTH_SHORT).show();
-
-
     }
 
-
     private void initHomeRecyclerView() {
-        mAdapter = new RecyclerAdapter(this, mExerciseViewModel.getHomeExercises().getValue());
-        //androidx.recyclerview.widget.LinearLayoutManager linearLayoutManager= new androidx.recyclerview.widget.LinearLayoutManager(this);
-        //LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL,false);;
 
+        mAdapter = new RecyclerAdapter(this, mExerciseViewModel.getHomeExercises().getValue());
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
     private void initPersonalRecyclerView() {
-        mAdapter = new RecyclerAdapter(this, mExerciseViewModel.getExercises().getValue());
 
+        mAdapter = new RecyclerAdapter(this, mExerciseViewModel.getExercises().getValue());
         RecyclerView.LayoutManager linearLayoutManager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(linearLayoutManager);
         mRecyclerView.setAdapter(mAdapter);
+
     }
 
-
     private void getCustomersData(){
+
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-
         customer_id = preferences.getInt("customer_id",0);
 
     }
@@ -223,8 +204,6 @@ public class WorkOutActivity extends AppCompatActivity {
         SharedPreferences preferences = getApplication().getSharedPreferences(String.valueOf(customer_id)+"themePref", Context.MODE_PRIVATE);
         theme = preferences.getString("theme","Light");
     }
-
-
 
     @Override
     public void onBackPressed() {

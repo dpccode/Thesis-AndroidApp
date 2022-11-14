@@ -31,6 +31,7 @@ public class HistoryActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         getCustomersData();
         getThemePref();
         if(theme.equals("Light"))
@@ -43,8 +44,6 @@ public class HistoryActivity extends AppCompatActivity {
         layoutList = findViewById(R.id.history_resView);
         removeAll = findViewById(R.id.history_removeAll_Btn);
         getCustomersData();
-
-
 
         SharedPreferences preferences = getApplication().getSharedPreferences(String.valueOf(customer_id)+"history", Context.MODE_PRIVATE);
         final SharedPreferences.Editor editor = preferences.edit();
@@ -97,25 +96,17 @@ public class HistoryActivity extends AppCompatActivity {
                 }
             });
 
-
             if(preferences.getBoolean("workOut_deleted_from_histroy"+String.valueOf(finalI),false) != true){
                 layoutList.addView(resView,0);
 
-
             }
-
-
         }
-
-
-
     }
 
     private void getCustomersData(){
         SharedPreferences preferences = getApplication().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         customer_id = preferences.getInt("customer_id",0);
-
     }
 
     public  void getThemePref(){

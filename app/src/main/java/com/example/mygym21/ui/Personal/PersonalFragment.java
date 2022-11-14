@@ -74,8 +74,6 @@ public class PersonalFragment extends Fragment {
     private Boolean refreshBtnClicked = false;
 
 
-
-
     public void onPrepareOptionsMenu(Menu menu) {
         if(subscription_type.equals("BASIC") || subscription_type.equals("MID")) {
             menu.findItem(R.id.refresh).setVisible(false);
@@ -101,7 +99,6 @@ public class PersonalFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -113,7 +110,6 @@ public class PersonalFragment extends Fragment {
             View root = inflater.inflate(R.layout.locked_layout, container, false);
             locked_text = root.findViewById(R.id.locked_text);
             locked_text.setText("In order to get access here buy  <<Premium>>  package");
-            //setMenuVisibility(false);
             setHasOptionsMenu(true);
             return root;
         }else {
@@ -234,7 +230,6 @@ public class PersonalFragment extends Fragment {
         RequestQueue rq;
         rq = Volley.newRequestQueue(getActivity());
         String url = "http://192.168.1.5:80/api/api/workouts/read.php?customers_id="+customer_id;
-        //Toast.makeText(getActivity(),"eimai edwwwwwwww ",Toast.LENGTH_LONG).show();
 
         ProgressDialog dialog = null;
         if(refreshBtnClicked){
@@ -274,7 +269,6 @@ public class PersonalFragment extends Fragment {
                 }
 
                 SharedPreferences preferences = getActivity().getSharedPreferences("customers_data", Context.MODE_PRIVATE);
-                //SharedPreferences.Editor editor = preferences.edit();
                 String p_exercises = preferences.getString("personal_exercises",null);
                 if(p_exercises != null){
                     try {
@@ -288,8 +282,6 @@ public class PersonalFragment extends Fragment {
 
             }
         });
-
-
         rq.add(stringRequest);
 
     }
@@ -419,7 +411,6 @@ public class PersonalFragment extends Fragment {
     }
 
     private void setViews(View root){
-
         mondayWorkOutTitle = root.findViewById(R.id.mondays_personal_workout_title);
         mondayWorkOutTotExercises = root.findViewById(R.id.mondays_personal_workout_totworkouts);
         mondayCardView = root.findViewById(R.id.mondays_personal_workout);
@@ -432,13 +423,11 @@ public class PersonalFragment extends Fragment {
         tuesdayBtn = root.findViewById(R.id.tuesdays_personal_workout_btn);
         tuesdayImage = root.findViewById(R.id.tuesdays_personal_workout_image);
 
-
         wednesdayWorkOutTitle = root.findViewById(R.id.wednesdays_personal_workout_title);
         wednesdayWorkOutTotExercises = root.findViewById(R.id.wednesdays_personal_workout_totworkouts);
         wednesdayCardView = root.findViewById(R.id.wednesdays_personal_workout);
         wednesdayBtn = root.findViewById(R.id.wednesdays_personal_workout_btn);
         wednesdayImage = root.findViewById(R.id.wednesdays_personal_workout_image);
-
 
         thursdayWorkOutTitle = root.findViewById(R.id.thursdays_personal_workout_title);
         thursdayWorkOutTotExercises = root.findViewById(R.id.thursdays_personal_workout_totworkouts);
@@ -446,20 +435,17 @@ public class PersonalFragment extends Fragment {
         thursdayBtn = root.findViewById(R.id.thursdays_personal_workout_btn);
         thursdayImage = root.findViewById(R.id.thursdays_personal_workout_image);
 
-
         fridayWorkOutTitle = root.findViewById(R.id.fridays_personal_workout_title);
         fridayWorkOutTotExercises = root.findViewById(R.id.fridays_personal_workout_totworkouts);
         fridayCardView = root.findViewById(R.id.fridays_personal_workout);
         fridayBtn = root.findViewById(R.id.fridays_personal_workout_btn);
         fridayImage = root.findViewById(R.id.fridays_personal_workout_image);
 
-
         saturdayWorkOutTitle = root.findViewById(R.id.saturdays_personal_workout_title);
         saturdayWorkOutTotExercises = root.findViewById(R.id.saturdays_personal_workout_totworkouts);
         saturdayCardView = root.findViewById(R.id.saturdays_personal_workout);
         saturdayBtn = root.findViewById(R.id.saturdays_personal_workout_btn);
         saturdayImage = root.findViewById(R.id.saturdays_personal_workout_image);
-
 
         sundayWorkOutTitle = root.findViewById(R.id.sundays_personal_workout_title);
         sundayWorkOutTotExercises = root.findViewById(R.id.sundays_personal_workout_totworkouts);
@@ -522,7 +508,7 @@ public class PersonalFragment extends Fragment {
             }
         }
 
-        }
+    }
 
 
     private void getCustomersData(){

@@ -21,6 +21,7 @@ public class ExerciseViewModel extends ViewModel {
     private int totalExercises;
 
     public void init(){
+
             if(mExercises != null){
                 return;
             }
@@ -30,7 +31,6 @@ public class ExerciseViewModel extends ViewModel {
 
             mHomeRepository = HomeRepository.getInstance();
             mHomeExercises =  mHomeRepository.getExercises();
-
 
     }
 

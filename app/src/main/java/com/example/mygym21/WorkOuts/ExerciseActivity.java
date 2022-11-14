@@ -60,9 +60,6 @@ public class ExerciseActivity extends AppCompatActivity {
     private YouTubePlayerView youTubePlayer;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getCustomersData();
@@ -79,12 +76,10 @@ public class ExerciseActivity extends AppCompatActivity {
         Intent intent = getIntent();
         TextView exerciseTitle;
 
-
         totalExercises = intent.getIntExtra("total_exercises", 0);
         exercisesComplitedCount = intent.getIntExtra("exercises_complited_count",0);
         program_title = intent.getStringExtra("program_title");
         getSupportActionBar().setTitle(program_title);
-
 
 
         if(mExerciseViewModel.getHomeExercises().getValue().get(exercisesComplitedCount).getReps() == 0){
@@ -263,7 +258,6 @@ public class ExerciseActivity extends AppCompatActivity {
         mTextViewCountDown.setText(timeLeftFormatted);
 
     }
-
 
     private void workOutFinished() {
         SharedPreferences preferences = getApplication().getSharedPreferences(String.valueOf(customer_id)+"history", Context.MODE_PRIVATE);

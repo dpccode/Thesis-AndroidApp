@@ -16,9 +16,6 @@ import com.example.mygym21.WorkOuts.models.Exercise;
 import java.util.ArrayList;
 import java.util.List;
 
-//import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.menu.defaultMenu.MenuAdapter;
-//import com.pierfrancescosoffritti.androidyoutubeplayer.core.ui.menu.defaultMenu.MenuAdapter;
-
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private List<Exercise> mExercises = new ArrayList<>();
@@ -28,8 +25,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         mExercises = exerc;
         mContext = context;
     }
-
-
 
     @NonNull
     @Override
@@ -55,9 +50,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         }else{
             ((ViewHolder) viewHolder).duration_or_reps.setText("x"+mExercises.get(viewHolder.getAdapterPosition()).getReps());
         }
-
         ((ViewHolder)viewHolder).rest.setText("Rest: "+String.valueOf(mExercises.get(viewHolder.getAdapterPosition()).getRestSeconds())+"s");
-
 
     }
 
@@ -65,8 +58,6 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public int getItemCount() {
         return mExercises.size();
     }
-
-
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
